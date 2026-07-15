@@ -31,7 +31,7 @@
     }
 
     .header h1 {
-      font-size: 3.5rem;
+      font-size: clamp(2rem, 8vw, 3.5rem);
       margin-bottom: 10px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
@@ -46,7 +46,7 @@
 
     .stat-box {
       background: rgba(255, 255, 255, 0.2);
-      padding: 15px 25px;
+      padding: 12px 20px;
       border-radius: 8px;
       color: white;
       backdrop-filter: blur(10px);
@@ -54,13 +54,13 @@
     }
 
     .stat-label {
-      font-size: 0.85rem;
+      font-size: clamp(0.7rem, 2vw, 0.85rem);
       opacity: 0.9;
       margin-bottom: 5px;
     }
 
     .stat-value {
-      font-size: 1.8rem;
+      font-size: clamp(1.3rem, 5vw, 1.8rem);
       font-weight: bold;
     }
 
@@ -73,14 +73,15 @@
     }
 
     button {
-      padding: 12px 30px;
-      font-size: 1rem;
+      padding: clamp(10px, 3vw, 12px) clamp(20px, 6vw, 30px);
+      font-size: clamp(0.9rem, 4vw, 1rem);
       border: none;
       border-radius: 8px;
       cursor: pointer;
       font-weight: 600;
       transition: all 0.2s;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      min-height: 44px;
     }
 
     .btn-primary {
@@ -109,13 +110,13 @@
       position: relative;
       background: rgba(187, 173, 160, 0.35);
       border-radius: 12px;
-      padding: 15px;
-      width: 340px;
-      height: 340px;
+      padding: clamp(12px, 4vw, 15px);
+      width: min(90vw, 340px);
+      height: min(90vw, 340px);
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      grid-gap: 12px;
+      grid-gap: clamp(8px, 2.5vw, 12px);
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     }
 
@@ -136,7 +137,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
+      font-size: clamp(1.2rem, 5vw, 2rem);
       color: #776e65;
       transition: all 0.15s ease-in-out;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -203,26 +204,28 @@
 
     .game-over-content {
       background: white;
-      padding: 40px;
+      padding: clamp(25px, 8vw, 40px);
       border-radius: 15px;
       text-align: center;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 90vw;
+      margin: 20px;
     }
 
     .game-over-content h2 {
-      font-size: 2.5rem;
+      font-size: clamp(1.8rem, 6vw, 2.5rem);
       color: #667eea;
       margin-bottom: 15px;
     }
 
     .game-over-content p {
-      font-size: 1.2rem;
+      font-size: clamp(1rem, 4vw, 1.2rem);
       color: #666;
       margin-bottom: 25px;
     }
 
     .game-over-content .final-score {
-      font-size: 2rem;
+      font-size: clamp(1.5rem, 5vw, 2rem);
       font-weight: bold;
       color: #764ba2;
       margin-bottom: 25px;
@@ -235,32 +238,87 @@
     }
 
     @media (max-width: 480px) {
-      .header h1 {
-        font-size: 2.5rem;
+      body {
+        padding: 16px;
       }
 
-      .game-board {
-        width: 280px;
-        height: 280px;
-        padding: 12px;
-        grid-gap: 10px;
+      .header {
+        margin-bottom: 20px;
       }
 
-      .tile {
-        font-size: 1.5rem;
+      .stats {
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .stat-box {
+        padding: 10px 16px;
+      }
+
+      .controls {
+        gap: 10px;
+        margin-bottom: 16px;
+      }
+
+      .hint {
+        font-size: 0.8rem;
+        margin-top: 15px;
       }
 
       .tile-128,
       .tile-256,
       .tile-512 {
-        font-size: 1.2rem;
+        font-size: clamp(0.9rem, 3.5vw, 1.2rem);
       }
 
       .tile-1024,
       .tile-2048,
       .tile-4096,
       .tile-8192 {
-        font-size: 1rem;
+        font-size: clamp(0.7rem, 3vw, 1rem);
+      }
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
+      body {
+        padding: 20px;
+      }
+
+      .header {
+        margin-bottom: 24px;
+      }
+
+      .stats {
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .controls {
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .tile-128,
+      .tile-256,
+      .tile-512 {
+        font-size: clamp(1rem, 4vw, 1.3rem);
+      }
+
+      .tile-1024,
+      .tile-2048,
+      .tile-4096,
+      .tile-8192 {
+        font-size: clamp(0.8rem, 3.5vw, 1.1rem);
+      }
+    }
+
+    @media (min-width: 769px) {
+      .stats {
+        gap: 20px;
+      }
+
+      .controls {
+        gap: 15px;
       }
     }
   </style>
