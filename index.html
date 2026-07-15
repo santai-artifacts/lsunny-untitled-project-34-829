@@ -13,7 +13,7 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+      background: linear-gradient(135deg, #ffd6e8 0%, #ffc0d9 100%);
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -27,7 +27,7 @@
 
     .header {
       margin-bottom: 30px;
-      color: white;
+      color: #ff69b4;
     }
 
     .header h1 {
@@ -45,18 +45,20 @@
     }
 
     .stat-box {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.8);
       padding: 12px 20px;
-      border-radius: 8px;
-      color: white;
+      border-radius: 20px;
+      color: #ff69b4;
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 2px solid #ffb6d9;
+      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.15);
     }
 
     .stat-label {
       font-size: clamp(0.7rem, 2vw, 0.85rem);
-      opacity: 0.9;
+      opacity: 0.8;
       margin-bottom: 5px;
+      font-weight: 600;
     }
 
     .stat-value {
@@ -76,40 +78,40 @@
       padding: clamp(10px, 3vw, 12px) clamp(20px, 6vw, 30px);
       font-size: clamp(0.9rem, 4vw, 1rem);
       border: none;
-      border-radius: 8px;
+      border-radius: 20px;
       cursor: pointer;
       font-weight: 600;
-      transition: all 0.2s;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
       min-height: 44px;
     }
 
     .btn-primary {
-      background: white;
-      color: #0066cc;
+      background: #ff69b4;
+      color: white;
     }
 
     .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
     }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.2);
-      color: white;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.9);
+      color: #ff69b4;
+      border: 2px solid #ffb6d9;
     }
 
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.3);
-      transform: translateY(-2px);
+      background: white;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3);
     }
 
     .game-board {
       position: relative;
-      background: rgba(187, 173, 160, 0.35);
-      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 25px;
       padding: clamp(12px, 4vw, 15px);
       width: min(90vw, 340px);
       height: min(90vw, 340px);
@@ -117,30 +119,32 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-gap: clamp(8px, 2.5vw, 12px);
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 15px 35px rgba(255, 105, 180, 0.2);
+      border: 3px solid rgba(255, 182, 217, 0.5);
     }
 
     .tile-container {
       position: relative;
       width: 100%;
       height: 100%;
-      border-radius: 8px;
-      background: rgba(205, 192, 180, 0.5);
+      border-radius: 15px;
+      background: rgba(255, 230, 240, 0.6);
+      box-shadow: inset 0 2px 5px rgba(255, 182, 217, 0.3);
     }
 
     .tile {
       position: absolute;
       width: 100%;
       height: 100%;
-      border-radius: 8px;
+      border-radius: 15px;
       font-weight: bold;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: clamp(1.2rem, 5vw, 2rem);
-      color: #776e65;
+      color: white;
       transition: all 0.15s ease-in-out;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 6px 15px rgba(255, 105, 180, 0.25);
     }
 
     .tile.new {
@@ -171,19 +175,19 @@
       }
     }
 
-    .tile-2 { background: #eee4da; }
-    .tile-4 { background: #ede0c8; }
-    .tile-8 { background: #f2b179; color: #f9f6f2; }
-    .tile-16 { background: #f59563; color: #f9f6f2; }
-    .tile-32 { background: #f67c5f; color: #f9f6f2; }
-    .tile-64 { background: #f65e3b; color: #f9f6f2; }
-    .tile-128 { background: #edcf72; color: #776e65; font-size: 1.5rem; }
-    .tile-256 { background: #edcc61; color: #776e65; font-size: 1.5rem; }
-    .tile-512 { background: #edc850; color: #776e65; font-size: 1.5rem; }
-    .tile-1024 { background: #edc53f; color: #776e65; font-size: 1.2rem; }
-    .tile-2048 { background: #edc22e; color: #776e65; font-size: 1.2rem; }
-    .tile-4096 { background: #3c3322; color: #f9f6f2; font-size: 1.2rem; }
-    .tile-8192 { background: #3c3322; color: #f9f6f2; font-size: 1.2rem; }
+    .tile-2 { background: #ffb6d9; }
+    .tile-4 { background: #ffa3ce; }
+    .tile-8 { background: #ff85c0; }
+    .tile-16 { background: #ff69b4; }
+    .tile-32 { background: #ff1493; }
+    .tile-64 { background: #ff0080; }
+    .tile-128 { background: #c71585; font-size: 1.5rem; }
+    .tile-256 { background: #d81b60; font-size: 1.5rem; }
+    .tile-512 { background: #ad1457; font-size: 1.5rem; }
+    .tile-1024 { background: #880e4f; font-size: 1.2rem; }
+    .tile-2048 { background: #6a0572; font-size: 1.2rem; }
+    .tile-4096 { background: #4a0047; font-size: 1.2rem; }
+    .tile-8192 { background: #2e0145; font-size: 1.2rem; }
 
     .game-over {
       position: fixed;
@@ -205,36 +209,39 @@
     .game-over-content {
       background: white;
       padding: clamp(25px, 8vw, 40px);
-      border-radius: 15px;
+      border-radius: 25px;
       text-align: center;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
       max-width: 90vw;
       margin: 20px;
+      border: 3px solid #ffb6d9;
     }
 
     .game-over-content h2 {
       font-size: clamp(1.8rem, 6vw, 2.5rem);
-      color: #0066cc;
+      color: #ff69b4;
       margin-bottom: 15px;
     }
 
     .game-over-content p {
       font-size: clamp(1rem, 4vw, 1.2rem);
-      color: #666;
+      color: #ff69b4;
       margin-bottom: 25px;
+      font-weight: 500;
     }
 
     .game-over-content .final-score {
       font-size: clamp(1.5rem, 5vw, 2rem);
       font-weight: bold;
-      color: #004499;
+      color: #ff1493;
       margin-bottom: 25px;
     }
 
     .hint {
-      color: rgba(255, 255, 255, 0.8);
+      color: #ff69b4;
       font-size: 0.9rem;
       margin-top: 20px;
+      font-weight: 500;
     }
 
     @media (max-width: 480px) {
