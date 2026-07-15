@@ -13,7 +13,7 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #ffd6e8 0%, #ffc0d9 100%);
+      background: linear-gradient(135deg, #d4e8f7 0%, #c0daf5 100%);
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -27,7 +27,7 @@
 
     .header {
       margin-bottom: 30px;
-      color: #ff69b4;
+      color: #4a90e2;
     }
 
     .header h1 {
@@ -48,10 +48,10 @@
       background: rgba(255, 255, 255, 0.8);
       padding: 12px 20px;
       border-radius: 20px;
-      color: #ff69b4;
+      color: #4a90e2;
       backdrop-filter: blur(10px);
-      border: 2px solid #ffb6d9;
-      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.15);
+      border: 2px solid #b3d9f2;
+      box-shadow: 0 8px 20px rgba(74, 144, 226, 0.15);
     }
 
     .stat-label {
@@ -82,30 +82,30 @@
       cursor: pointer;
       font-weight: 600;
       transition: all 0.3s;
-      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+      box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
       min-height: 44px;
     }
 
     .btn-primary {
-      background: #ff69b4;
+      background: #4a90e2;
       color: white;
     }
 
     .btn-primary:hover {
       transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+      box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4);
     }
 
     .btn-secondary {
       background: rgba(255, 255, 255, 0.9);
-      color: #ff69b4;
-      border: 2px solid #ffb6d9;
+      color: #4a90e2;
+      border: 2px solid #b3d9f2;
     }
 
     .btn-secondary:hover {
       background: white;
       transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3);
+      box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
     }
 
     .game-board {
@@ -119,8 +119,8 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-gap: clamp(8px, 2.5vw, 12px);
-      box-shadow: 0 15px 35px rgba(255, 105, 180, 0.2);
-      border: 3px solid rgba(255, 182, 217, 0.5);
+      box-shadow: 0 15px 35px rgba(74, 144, 226, 0.2);
+      border: 3px solid rgba(179, 217, 242, 0.5);
     }
 
     .tile-container {
@@ -128,8 +128,8 @@
       width: 100%;
       height: 100%;
       border-radius: 15px;
-      background: rgba(255, 230, 240, 0.6);
-      box-shadow: inset 0 2px 5px rgba(255, 182, 217, 0.3);
+      background: rgba(220, 240, 250, 0.6);
+      box-shadow: inset 0 2px 5px rgba(179, 217, 242, 0.3);
     }
 
     .tile {
@@ -144,7 +144,7 @@
       font-size: clamp(1.2rem, 5vw, 2rem);
       color: white;
       transition: all 0.15s ease-in-out;
-      box-shadow: 0 6px 15px rgba(255, 105, 180, 0.25);
+      box-shadow: 0 6px 15px rgba(74, 144, 226, 0.25);
     }
 
     .tile.new {
@@ -175,19 +175,19 @@
       }
     }
 
-    .tile-2 { background: #ffb6d9; }
-    .tile-4 { background: #ffa3ce; }
-    .tile-8 { background: #ff85c0; }
-    .tile-16 { background: #ff69b4; }
-    .tile-32 { background: #ff1493; }
-    .tile-64 { background: #ff0080; }
-    .tile-128 { background: #c71585; font-size: 1.5rem; }
-    .tile-256 { background: #d81b60; font-size: 1.5rem; }
-    .tile-512 { background: #ad1457; font-size: 1.5rem; }
-    .tile-1024 { background: #880e4f; font-size: 1.2rem; }
-    .tile-2048 { background: #6a0572; font-size: 1.2rem; }
-    .tile-4096 { background: #4a0047; font-size: 1.2rem; }
-    .tile-8192 { background: #2e0145; font-size: 1.2rem; }
+    .tile-2 { background: #b3d9f2; }
+    .tile-4 { background: #7fc3e8; }
+    .tile-8 { background: #5bb3e0; }
+    .tile-16 { background: #4a90e2; }
+    .tile-32 { background: #3676d4; }
+    .tile-64 { background: #2563c8; }
+    .tile-128 { background: #1a4fa8; font-size: 1.5rem; }
+    .tile-256 { background: #154a8f; font-size: 1.5rem; }
+    .tile-512 { background: #0f3a78; font-size: 1.5rem; }
+    .tile-1024 { background: #0a2c5f; font-size: 1.2rem; }
+    .tile-2048 { background: #062047; font-size: 1.2rem; }
+    .tile-4096 { background: #03172f; font-size: 1.2rem; }
+    .tile-8192 { background: #010f18; font-size: 1.2rem; }
 
     .game-over {
       position: fixed;
@@ -211,21 +211,21 @@
       padding: clamp(25px, 8vw, 40px);
       border-radius: 25px;
       text-align: center;
-      box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+      box-shadow: 0 20px 60px rgba(74, 144, 226, 0.3);
       max-width: 90vw;
       margin: 20px;
-      border: 3px solid #ffb6d9;
+      border: 3px solid #b3d9f2;
     }
 
     .game-over-content h2 {
       font-size: clamp(1.8rem, 6vw, 2.5rem);
-      color: #ff69b4;
+      color: #4a90e2;
       margin-bottom: 15px;
     }
 
     .game-over-content p {
       font-size: clamp(1rem, 4vw, 1.2rem);
-      color: #ff69b4;
+      color: #4a90e2;
       margin-bottom: 25px;
       font-weight: 500;
     }
@@ -233,12 +233,12 @@
     .game-over-content .final-score {
       font-size: clamp(1.5rem, 5vw, 2rem);
       font-weight: bold;
-      color: #ff1493;
+      color: #2563c8;
       margin-bottom: 25px;
     }
 
     .hint {
-      color: #ff69b4;
+      color: #4a90e2;
       font-size: 0.9rem;
       margin-top: 20px;
       font-weight: 500;
